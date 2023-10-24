@@ -13,6 +13,6 @@ final class SimpleField extends Field{
         }
         //echo $this->name;
         echo "<p><label for=\"id_$this->name\">$this->text: </label>\n";
-        echo "<input id=\"$this->name\" type=\"$this->type\" name=\"this->name\" $value></input></p>\n";
+        echo "<input id=\"id_$this->name\" type=\"$this->type\" name=\"this->name\" $value></input></p>\n";
 }}
 ?>
