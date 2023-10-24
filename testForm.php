@@ -1,6 +1,17 @@
 <?php 
     require_once 'Form.php';
-    $form1 = new Form();
+    require_once 'Field.php';
+    require_once 'SimpleField.php';
+    $form1 = new Form("validate.php","Prueba formulario","post");
+    
+
+    $simpleField1 = new SimpleField('nombre','text', 'Escribe el nombre');
+    $form1->add($simpleField1);
+    $form1->add(new SimpleField('edad','number', '¿Que edad tienes?' ,'18'));
+    $form1->add(new SimpleField('color','color', '¿Cual es tu color favorito', '#0000FF'));
+    $form1->add(new SimpleField('Check 4','checkbox', 'Quieres suscribirte?' , 'true'));
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,6 +19,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        form{
+            border: 1px solid blue;
+        }
+    </style>
 </head>
 <body>
     <h1>Pruebas con formulario</h1>
